@@ -39,6 +39,7 @@ class WComicBook {
   }
   
   function page_view($file) {
+    global $config;
     $timestamp = time();
     $cacheDir = BASEPATH.'cache'.DIRECTORY_SEPARATOR.$timestamp.DIRECTORY_SEPARATOR;
     if (!file_exists($cacheDir)) mkdir($cacheDir);
@@ -52,8 +53,12 @@ class WComicBook {
     include BASEPATH.'lib/html/view.php';
   }
   
-  function page_delete($file) {
+  function page_delete() {
+    global $config;
+    $file = $_GET['file'] ?? 'null';
+    $file = $config['comicsPath'].urldecode($file);
     if (file_exists($file)) unlink($file);
+    else die('Error: File not found!');
     header('Location: index.php');
   }
   
