@@ -14,3 +14,5 @@ Make sure your cache folder has 0777 permissions.
 - Boostwatch Slate Theme 4.6.0
 - Font Awesome 5 Free
 - Lazy Load 1.9.1
+
+![Counter](https://webfikirleri.com/counter?url=https://github.com/WebFikirleri/WCBReader)
